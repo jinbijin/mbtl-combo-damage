@@ -3,7 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mbtl.UI", "Mbtl.UI\Mbtl.UI.csproj", "{2F5F09ED-1774-44E8-8AD3-9C6520AE93AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mbtl.UI", "Mbtl.UI\Mbtl.UI.csproj", "{2F5F09ED-1774-44E8-8AD3-9C6520AE93AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mbtl.Data", "Mbtl.Data\Mbtl.Data.csproj", "{99820FB1-5573-402A-8BF4-E68DE49AAE05}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution items", "Solution items", "{37C0605A-90CC-40C4-963F-F2515BA0B8E4}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +22,10 @@ Global
 		{2F5F09ED-1774-44E8-8AD3-9C6520AE93AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F5F09ED-1774-44E8-8AD3-9C6520AE93AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F5F09ED-1774-44E8-8AD3-9C6520AE93AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99820FB1-5573-402A-8BF4-E68DE49AAE05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99820FB1-5573-402A-8BF4-E68DE49AAE05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99820FB1-5573-402A-8BF4-E68DE49AAE05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99820FB1-5573-402A-8BF4-E68DE49AAE05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
