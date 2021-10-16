@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { IndexStateModule } from './state/index/index.state.module';
+import { CharacterSelectionModule } from './features/character-selection/character-selection.module';
 
 @NgModule({
   declarations: [
@@ -20,9 +21,10 @@ import { IndexStateModule } from './state/index/index.state.module';
     HttpClientModule,
     FormsModule,
     IndexStateModule,
+    CharacterSelectionModule,
     RouterModule.forRoot([
-    { path: '', component: HomeComponent, pathMatch: 'full' },
-], { relativeLinkResolution: 'legacy' })
+      { path: '', component: HomeComponent, pathMatch: 'full' },
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

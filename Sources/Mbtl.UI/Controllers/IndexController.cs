@@ -20,8 +20,8 @@ namespace Mbtl.UI.Controllers
             using var db = DataContext.Instance;
             return new IndexResponse
             {
-                Characters = await db.Characters.Select(x => new Character { Id = x.Id, Name = x.Name, Links = Enumerable.Empty<Link>() }).ToListAsync(),
-                Links = Enumerable.Empty<Link>()
+                Characters = await db.Characters.Select(x => new Character { Id = x.Id, Name = x.Name, Links = new List<Link>() }).ToListAsync(),
+                Links = new List<Link>()
             };
         }
     }
