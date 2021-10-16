@@ -1,12 +1,15 @@
-  <nav
-    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
-  >
+  <nav class="navbar navbar-light bg-white border-bottom box-shadow mb-3">
     <div class="container">
-      <span>MBTL CDU</span>
+      <div class="dropdown">
+        <button type="button" class="btn bg-white dropdown-toggle" id="selectCharacterButton" data-bs-toggle="dropdown" aria-expanded="false"></button>
+        <ul class="dropdown-menu" aria-labelledby="selectCharacterButton">
+          <li *ngFor="let item of (characters$ | async)"><button type="button" class="dropdown-item">{{ item.name }}</button></li>
+        </ul>
+      </div>
       <div class="d-sm-inline-flex justify-content-end">
         <ul class="navbar-nav flex-grow">
           <li *ngIf="(addCharacterLink$ | async) as addCharacterLink" class="nav-item">
-            <button type="button" class="btn btn-light bi bi-person-plus-fill"></button>
+            <button type="button" class="btn bg-white bi bi-person-plus-fill"></button>
           </li>
         </ul>
       </div>
