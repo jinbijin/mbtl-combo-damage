@@ -5,7 +5,7 @@
       <span>MBTL CDU</span>
       <div class="d-sm-inline-flex justify-content-end">
         <ul class="navbar-nav flex-grow">
-          <li class="nav-item">
+          <li *ngIf="(addCharacterLink$ | async) as addCharacterLink" class="nav-item">
             <button type="button" class="btn btn-light bi bi-person-plus-fill"></button>
           </li>
         </ul>
