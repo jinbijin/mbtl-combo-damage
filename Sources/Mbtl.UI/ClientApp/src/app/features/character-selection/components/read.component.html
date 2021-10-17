@@ -1,0 +1,19 @@
+<div *ngIf="(selectedCharacter$ | async) as selectedCharacter" (click)="startEdit()">{{ selectedCharacter.name }}</div>
+<div>
+  <div class="dropdown">
+    <button type="button" class="btn bg-white dropdown-toggle" id="selectCharacterButton" data-bs-toggle="dropdown" aria-expanded="false">
+      <span *ngIf="!(selectedCharacter$ | async)">Select character</span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="selectCharacterButton">
+      <li *ngFor="let item of (characters$ | async)"><button type="button" class="dropdown-item" (click)="selectCharacter(item.id)">{{ item.name }}</button></li>
+    </ul>
+  </div>
+</div>
+<div class="flex-grow-1"></div>
+<div class="d-sm-inline-flex justify-content-end">
+  <ul class="navbar-nav flex-grow">
+    <li class="nav-item">
+      <button type="button" class="btn bg-white bi bi-person-plus-fill" (click)="addCharacter()"></button>
+    </li>
+  </ul>
+</div>
