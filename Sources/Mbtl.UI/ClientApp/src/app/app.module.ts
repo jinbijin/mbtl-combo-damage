@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { IndexStateModule } from './state/index/index.state.module';
 import { CharacterSelectionModule } from './features/character-selection/character-selection.module';
@@ -13,7 +12,6 @@ import { CharacterSelectionModule } from './features/character-selection/charact
 @NgModule({
   declarations: [
     AppComponent,
-    NavMenuComponent,
     HomeComponent,
   ],
   imports: [
