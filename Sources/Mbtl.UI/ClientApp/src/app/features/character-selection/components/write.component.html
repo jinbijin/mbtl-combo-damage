@@ -1,0 +1,7 @@
+<div class="d-inline-flex">
+	<input [formControl]="formControl" class="form-control" type="text" placeholder="Enter a name" aria-label="Character name">
+  <div class="btn-group" role="group" aria-label="Actions">
+    <button *ngIf="saveLink$ | async as saveLink" type="button" class="btn bg-white bi bi-save-fill" (click)="saveCharacter(saveLink)"></button>
+    <button type="button" class="btn bg-white bi bi-arrow-counterclockwise" (click)="undoEdit()"></button>
+  </div>
+</div>

@@ -1,4 +1,5 @@
 ﻿using Mbtl.Data;
+using Mbtl.UI.Mapping;
 using Mbtl.UI.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -15,24 +16,26 @@ namespace Mbtl.UI.Controllers
     public class CharacterController : ControllerBase
     {
         [HttpPost]
-        public async Task<int> AddCharacter([FromBody] AddCharacterRequest request)
+        public async Task<Character> AddCharacter([FromBody] AddCharacterRequest request)
         {
             using var db = DataContext.Instance;
             var character = new Data.Model.Character { Name = request.Name };
             await db.Characters.AddAsync(character);
             await db.SaveChangesAsync();
 
-            return character.Id;
+            return CharacterMapper.Map.Compile()(character);
         }
 
         [HttpPatch]
         [Route("{characterId:int}/name")]
-        public async Task SetCharacterName([FromQuery] int characterId, [FromBody] SetCharacterNameRequest request)
+        public async Task<Character> SetCharacterName([FromRoute] int characterId, [FromBody] SetCharacterNameRequest request)
         {
             using var db = DataContext.Instance;
-            var character = await db.Characters.FirstOrDefaultAsync(x => x.Id == characterId);
+            var character = await db.Characters.SingleAsync(x => x.Id == characterId);
             character.Name = request.Name;
             await db.SaveChangesAsync();
+
+            return CharacterMapper.Map.Compile()(character);
         }
 
         [HttpDelete]

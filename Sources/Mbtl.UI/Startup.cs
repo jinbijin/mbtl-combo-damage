@@ -67,7 +67,8 @@ namespace Mbtl.UI
                 }
             });
 
-            Electron.Menu.SetApplicationMenu(System.Array.Empty<ElectronNET.API.Entities.MenuItem>());
+            // Uncomment line below for production
+            // Electron.Menu.SetApplicationMenu(System.Array.Empty<ElectronNET.API.Entities.MenuItem>());
             Task.Run(async () => await Electron.WindowManager.CreateWindowAsync());
         }
     }
